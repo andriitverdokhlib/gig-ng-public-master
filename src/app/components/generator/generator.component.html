@@ -1,0 +1,24 @@
+<div class="row d-flex justify-content-around" [formGroup]="form">
+  <div class="input-group col-2" >
+    <label>
+      <input type="text" class="form-control" maxlength="1" placeholder="Character" formControlName="char">
+    </label>
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-secondary" [disabled]="form.disabled" (click)="generateCode(true)">Generate</button>
+  </div>
+</div>
+<div class="row">
+  <table class="table table-bordered">
+    <tbody>
+    <tr *ngFor="let row of grid">
+      <td *ngFor="let item of row">{{ item }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="code-block" *ngIf="code">
+    YOUR CODE NOW: {{ code }}
+  </div>
+</div>

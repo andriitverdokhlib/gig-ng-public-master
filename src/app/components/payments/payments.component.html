@@ -1,0 +1,37 @@
+<div class="row mb-3" [formGroup]="form">
+  <div class="input-group col-2" >
+    <label>
+      <input type="text" class="form-control" placeholder="Name" formControlName="name">
+    </label>
+  </div>
+  <div class="input-group col-2" >
+    <label>
+      <input type="text" class="form-control" placeholder="Amount" formControlName="amount">
+    </label>
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-secondary" (click)="addPayment()">Add payment</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Code</th>
+        <th scope="col">Grid</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let payment of payments">
+        <td>{{ payment.name }}</td>
+        <td>{{ payment.amount }}</td>
+        <td>{{ payment.code }}</td>
+        <td>100</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
